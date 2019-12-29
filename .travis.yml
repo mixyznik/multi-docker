@@ -14,10 +14,10 @@ after_success:
     - docker build -t milostoster80/multi-server ./server
     - docker build -t milostoster80/multi-worker ./worker
 
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take those images and push them to docker hub
-- docker push -milostoster80/multi-client
-- docker push -milostoster80/multi-nginx
-- docker push -milostoster80/multi-server
-- docker push -milostoster80/multi-worker
+    # Log in to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Take those images and push them to docker hub
+    - docker push -milostoster80/multi-client
+    - docker push -milostoster80/multi-nginx
+    - docker push -milostoster80/multi-server
+    - docker push -milostoster80/multi-worker
